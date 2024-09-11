@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Test
+    </title>
+
+   <style>
+    .main , .drinkList-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: rgb(250, 220, 220);
+     }
+.drinkList-div select{
+    padding: 10px;
+    border: 2px solid #3498db; /* Blue border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light grey background */
+    color: #333; /* Dark text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 200px; /* Fixed width */
+    
+}
+
+button {
+    margin: 0;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    height: 20px;
+    width: 200px;
+    font: inherit;
+    cursor: pointer;
+   text-align: center;
+}
+   </style>
+</head>
+<body>
+   <div class="main">
+    <h2 id="input"></h2>
+    <h2 id="output"></h2>
+   </div>
+  
+   <div class="drinkList-div">
+    <select name="drinks" id="drinksSelect">
+        <option value="coke">Coke</option>
+        <option value="water">Water</option>
+        <option value="juice">Juice</option>
+        <option value="tea">Tea</option>
+
+       
+    </select>
+    <br>
+    <button type="submit" onclick="getSelectedValue()">Submit</button>
+
+    <h4 id="drinkPrice"></h4>
+   </div>
+    <script src="main.js"></script>
+    
+</body>
+</html>
