@@ -180,12 +180,28 @@ isPolindrome2(',,sasas,');
 
 
 
-//
+//Returning an object 
+function latterMapCounter(str) {
+    
+    counter =0;
+        let myMap = new Map();
+    for (let index = 0; index < str.length; index++) {
+       let arr = [ ...str.matchAll(str[index])];
+            myMap.set(str[index], arr.length);
+    }
+    let aar = [];
+        for(let [key,value] of myMap) {
+            console.log(` '${key}' : ${value}`);
+           
+        }
+        
+}
+latterMapCounter('this is this string this ');
 
 
 //Voiwels replacing
 function vowelsReplacer(str) {
-    let arr = str.split(''); // Convert the string to an array of characters
+    let arr = str.split(''); 
     
     for (let index = 0; index < arr.length; index++) {
         switch (arr[index]) {
