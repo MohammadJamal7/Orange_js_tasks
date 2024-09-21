@@ -38,11 +38,12 @@ list-style: none;
 nav a {
     text-decoration: none;
     color: black;
-    font-size: 0.8em;
+    font-size: 1em;
     height: 100%;
     padding: 0 30px;
     display: flex;
     align-items: center;
+    
 }
 nav li:hover {
 background-color: rgb(234, 234, 221);
@@ -86,11 +87,16 @@ nav li:first-child{
     display: block;
 }
 }
-@media (max-width:400px){
+@media (max-width:600px){
     .sidebar {
         width: 100%;
     }
     h1 {
         font-size: 1em;
+    }
+}
+@media (max-width:250px){
+    h1 {
+        font-size: 0.5em;
     }
 }

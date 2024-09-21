@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        /* Styling for the body to center content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Container for the image and buttons */
+        .container {
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Styling for the images */
+        .image img {
+            width: 300px;
+            height: 220px;
+            border-radius: 10px;
+            object-fit: cover;
+            
+        }
+
+        /* Styling for the buttons */
+        button {
+            padding: 10px 20px;
+            margin: 20px 10px;
+            background-color: #d78af8;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect for buttons */
+        button:hover {
+            background-color: #b275f8;
+        }
+
+        /* Button alignment */
+        .prev, .next {
+            display: inline-block;
+            min-width: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Images to display in the slideshow -->
+        <div class="image"><img src="Assets/img1.jpg" alt="Image 1"></div>
+        <div class="image"><img src="Assets/img2.jpg" alt="Image 2"></div>
+        <div class="image"><img src="Assets/img3.jpg" alt="Image 3"></div>
+
+        <!-- Navigation buttons -->
+        <button class="prev" onclick="plusImage(-1)">Previous</button>
+        <button class="next" onclick="plusImage(1)">Next</button>
+    </div>
+
+    <script>
+        let i = 0; //counter
+          showImage(i);
+        
+     function plusImage(n){
+        showImage(i+= n);
+     }
+
+     function showImage(n){
+        let images = document.getElementsByClassName("image"); // Declare globally
+        if (n > images.length) { // Reset counter
+                i = 1;
+            }
+            if (n<1) {
+                i = images.length;
+            }
+        for (let index = 0; index < images.length; index++) { 
+                images[index].style.display = "none"; // Hide all images
+            }
+            images[i-1].style.display = "block"; // Show the current image
+     }
+
+
+    
+    
+    </script>
+</body>
+</html>
