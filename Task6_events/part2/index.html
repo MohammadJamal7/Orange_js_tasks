@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task</title>
+</head>
+<body>
+
+
+ <select name="CountriesList" id="list" onchange="picChange(this)">
+    <option value="Syria" selected>Syria</option>
+    <option value="Palastine">Palastine</option>
+    <option value="Moroco">Moroco</option>
+ </select>
+
+   <img id="countryImg" src="/Task6_events/part2/Assets/syria.png" alt="" height="100px" width="200px">
+
+
+
+    <script>
+function picChange() {
+    let country = document.getElementById("list").value;
+    switch (country) {
+        case "Syria":
+            document.getElementById("countryImg").src = "/Task6_events/part2/Assets/syria.png";
+            break;
+        case "Palastine":
+            document.getElementById("countryImg").src = "/Task6_events/part2/Assets/pal.jpeg";
+            break;
+        case "Moroco":
+            document.getElementById("countryImg").src = "/Task6_events/part2/Assets/moroco.jpg";
+            break;
+        default:
+            document.getElementById("countryImg").src = "";
+            break;
+    }
+}
+    </script>
+</body>
+</html>

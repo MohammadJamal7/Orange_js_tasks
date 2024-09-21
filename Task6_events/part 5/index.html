@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>part 4</title>
+    <style>
+        /* p {
+           text-decoration: underline;
+        } */
+    </style>
+</head>
+<body>
+    <form action="" method="post" id="editor">
+
+        <select name="fontFamilies" id="fonts" onchange="changeFont()">
+            <option value="serif" selected>Serif</option>
+            <option value="Lucida">Lucida</option>
+            <option value="arial">Arial</option>
+            
+        </select>
+
+        <select name="fontSizes" id="sizes" onchange="changeSize()">
+            <option value="5pt">5pt</option>
+            <option value="10pt">10pt</option>
+            <option value="15pt">15pt</option>
+            
+        </select>
+
+       <label for="italic">italic</label> <input type="checkbox" id="italic" onclick="changeStyle(this)">
+       <label for="bold">bold</label> <input type="checkbox" id="bold" onclick="changeStyle(this)">
+       <label for="underLine">underLine</label> <input type="checkbox" id="underline" onclick="changeStyle(this)">
+       <br>
+       <textarea type="text" style="width: 300px;
+  height: 80px;" id="theInput"></textarea>
+       
+    </form>
+
+
+    <script>
+        //changing the font family
+       function changeFont()
+        {
+            let fontFam = document.getElementById("fonts").value;
+        switch (fontFam) {
+            case "serif":
+                   document.getElementById("theInput").style.fontFamily = "Times New Roman", Times, serif;
+                break;
+
+            case "Lucida":
+                document.getElementById("theInput").style.fontFamily =  "Lucida Console", "Courier New", monospace;
+                break;
+
+            case "arial":
+                   document.getElementById("theInput").style.fontFamily =  "Sofadi One", system-ui;
+                break;
+           
+        }  
+        }
+
+        //changing the font size
+        function changeSize() {
+            let size = document.getElementById("sizes").value;
+            document.getElementById("theInput").style.fontSize = size;
+           
+        }
+
+        function changeStyle (element) {
+            switch (element.id) {
+                case "italic":
+                    document.getElementById("theInput").style.fontStyle = document.getElementById("italic").checked?"italic": "normal";
+                    break;
+                    case "bold":
+                    document.getElementById("theInput").style.fontWeight = document.getElementById("bold").checked?"bold": "normal";
+                    break;
+                    case "underline":
+                    document.getElementById("theInput").style.textDecoration = document.getElementById("underline").checked?"underline":"none";
+                    break;
+            
+                
+            }
+        }
+    </script>
+</body>
+</html>

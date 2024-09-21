@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Animation</title>
+    <style>
+        
+        .animated-box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 10px;
+            position: relative;
+           
+        }
+
+      
+        @keyframes changeColor {
+            0% {
+                left: 0%;
+            }
+        
+            100% {
+               left:90%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="box" class="animated-box" onclick="myFunction()"></div>
+
+    <script>
+        let div1 = document.getElementById("box");
+        function myFunction() {
+  div1.style.animation = "changeColor 4s 3";
+}
+
+div1.addEventListener("animationstart", myStartFunction);
+div1.addEventListener("animationiteration", myRepeatFunction);
+div1.addEventListener("animationend", myEndFunction);
+
+function myStartFunction() {
+  this.style.backgroundColor = "pink";
+  
+}
+function myRepeatFunction() {
+ 
+  this.style.backgroundColor = "lightblue";
+}
+function myEndFunction() {
+  
+  this.style.backgroundColor = "lightgray";
+}
+    </script>
+</body>
+</html>

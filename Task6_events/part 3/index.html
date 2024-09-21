@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>part 3</title>
+</head>
+<body>
+    <form id="passForm" action="" method="post">
+        <label for="pass">Password(min 6 characters)</label>
+        <input type="password" id="input1" oninput="changeInput()">
+        <label id="warning" for="warn" style="color: red;"></label>
+        <br>
+        <label for="repeatPass" >Repeat password</label>
+        <input type="password" id="input2" oninput="ensureMatching()">
+        <label id="warning2" for="w" style="color: red;"></label>
+        <input id="submitting" type="submit" style="display: none;">
+    </form>
+    
+
+    <script>
+        function changeInput(){
+            let x = document.getElementById("input1").value;
+            console.log(x);
+            if (x.length <= 6) {
+                document.getElementById("warning").innerHTML = "must be more than 6!";
+            }
+            else {  document.getElementById("warning").innerHTML = "";}
+
+        }
+
+        function ensureMatching(){
+            let y = document.getElementById("input2").value;
+            let x = document.getElementById("input1").value;
+            
+            if (y !==x) {
+                document.getElementById("warning2").innerHTML = "Passowrds don't match";
+            }
+            else {document.getElementById("warning2").innerHTML = "";
+                document.getElementById("submitting").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+        p {
+            width: fit-content;
+            border: 1px solid black;
+            padding: 3px;
+            
+        }
+    </style>
+</head>
+<body>
+    
+        <p id="hello" onmouseover="hovering(this)" onmouseout="mOut(this)"> hello world</p>
+    
+
+
+    <script>
+       function hovering (id){
+        document.getElementById("hello").style.backgroundColor = "yellow";
+        document.getElementById("hello").style.fontWeight = "bold";
+
+       }
+       function mOut(id) {
+        document.getElementById("hello").style.backgroundColor = "white";
+        document.getElementById("hello").style.fontWeight = "500";
+
+       }
+    </script>
+</body>
+</html>

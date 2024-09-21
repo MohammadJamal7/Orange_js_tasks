@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            border: 1px solid black;
+
+        }
+       span {
+        margin-right: 50%;
+       }
+       p {
+        display: none;
+       }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>What is loerm inpsum?</span>
+        <a href="#" id="show" onclick="showing()">Show</a>
+        <p id="paragraph">this is the first time for me becaue its the first time for me so its the first time for me </p>
+          
+    </div>
+
+
+    
+     <script>
+        let clicker = true
+       
+         function showing() {
+          
+                  if (clicker) {
+                 document.getElementById("paragraph").style.display = "block";
+                 document.getElementById("show").innerHTML = "hide";
+                       
+                  }
+                  else {  document.getElementById("paragraph").style.display = "none";
+                  document.getElementById("show").innerHTML = "show";
+                }
+
+                clicker = !clicker;
+         }
+         
+     </script>
+</body>
+</html>
