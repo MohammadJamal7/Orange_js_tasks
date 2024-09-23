@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Data Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="personal-data-form">
+            <h2>Personal Data Form</h2>
+
+            <div class="input-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="age">Your Age:</label>
+                <input type="number" id="age" required min="1">
+            </div>
+
+            <div class="input-group">
+                <label>Gender:</label>
+                <div class="gender-options">
+                    <label><input type="radio" name="gender" value="female" required> Female</label>
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="description">Brief Description:</label>
+                <textarea id="description" rows="4" required></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="major">Your Major:</label>
+                <input type="text" id="major" required>
+            </div>
+
+            <div class="input-group">
+                <label for="university">Your University:</label>
+                <input type="text" id="university" required>
+            </div>
+
+            <div class="input-group">
+                <label>Preferred Programming Languages:</label><br>
+                <label><input type="checkbox" class="langs" value="JavaScript"> JavaScript</label>
+                <label><input type="checkbox" class="langs" value="Rust"> Python</label>
+                <label><input type="checkbox" class="langs" value="Go"> Java</label>
+                <label><input type="checkbox" class="langs" value="C#"> C#</label>
+                <label><input type="checkbox" class="langs" value="Dart"> Ruby</label>
+            </div>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

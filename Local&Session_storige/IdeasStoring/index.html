@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Submission Form</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <h1>Project Submission Form</h1>
+    <form id="projectForm">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="desc">Description:</label>
+        <textarea id="desc" name="desc" required></textarea>
+
+        <label for="user-types">User Type:</label>
+        <select id="user-types" name="user-types" required>
+            <option value="">Select a user type</option>
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+            <option value="manager">Manager</option>
+            <option value="client">Client</option>
+            <option value="end-user">End User</option>
+        </select>
+
+        <label for="tech">Technology Used:</label>
+        <input type="text" id="tech" name="tech" required>
+
+        <input type="submit" class="btn" value="Submit Project">
+    </form>
+
+    <div id="message"></div>
+
+    <h2>Stored Projects</h2>
+    <div id="storedProjects"></div>
+
+ <script src="main.js"></script>
+</body>
+</html>

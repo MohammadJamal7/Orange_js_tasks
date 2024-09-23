@@ -14,145 +14,56 @@
             <div class="input-group">
                 <label for="first-name">First Name</label>
                 <input oninput="checkUsername(this)" type="text" id="first-name" required>
-                <span id="error-message"  style="color: red; font-size: small;"></span>
+                <span class="error-message" id="error-message" style="color: red; font-size: small;"></span>
             </div>
 
             <div class="input-group">
                 <label for="last-name">Last Name</label>
-                <input oninput="checkUsername(this)" type="text" id="last-name" required>
-                <span id="error-message2" style="color: red; font-size: small;"></span>
+                <input oninput="checkUsername(this)" type="text" id="last-name" >
+                <span class="error-message" id="error-message2" style="color: red; font-size: small;"></span>
             </div>
 
             <div class="input-group">
                 <label for="birth-date">Birth Date</label>
-                <input oninput="dateValidation()" type="text" id="birth-date" required>
-                <span id="date-message" style="color: red; font-size: small;"></span>
-
+                <input oninput="dateValidation()" type="text" id="birth-date" >
+                <span class="error-message" id="date-message" style="color: red; font-size: small;"></span>
             </div>
 
             <div class="input-group">
                 <label for="email">Email</label>
                 <input oninput="emailValidation()" type="text" id="email" required>
-                <span id="email-message" style="color: red; font-size: small;"></span>
+                <span class="error-message" id="email-message" style="color: red; font-size: small;"></span>
             </div>
 
             <div class="input-group">
                 <label for="confirm-email">Confirm Email</label>
-                <input oninput="checkEmail()" type="text" id="confirm-email" required>
-                <span id="conf-message" style="color: red; font-size: small;"></span>
-                
+                <input oninput="checkEmail()" type="text" id="confirm-email" >
+                <span class="error-message" id="conf-message" style="color: red; font-size: small;"></span>
             </div>
 
             <div class="input-group">
-                <label for="text">Password</label>
-                <input oninput="passvalidation()" type="text" id="password" required>
-                <span id="pass-message" style="color: red; font-size: small;"></span>
-
+                <label for="password">Password</label>
+                <input oninput="passvalidation()" type="password" id="password" >
+                <span class="error-message" id="pass-message" style="color: red; font-size: small;"></span>
             </div>
 
             <div class="input-group">
                 <label for="confirm-password">Confirm Password</label>
-                <input oninput="checkPass()" type="text" id="confirm-password" required>
-                <span id="conf-pass-message" style="color: red; font-size: small;"></span>
-
+                <input oninput="checkPass()" type="password" id="confirm-password" >
+                <span class="error-message" id="conf-pass-message" style="color: red; font-size: small;"></span>
             </div>
+
             <div class="input-group">
                 <label for="phone">Phone number</label>
-                <input oninput="phoneValidation()" type="text" id="phone" required>
-                <span id="phone-message" style="color: red; font-size: small;"></span>
-
+                <input oninput="phoneValidation()" type="text" id="phone" >
+                <span class="error-message" id="phone-message" style="color: red; font-size: small;"></span>
             </div>
 
-            <button type="submit">Register</button>
+            <button type="button" onclick="storeData()">Register</button>
             <p class="message">Already have an account? <a href="#">Login</a></p>
         </form>
     </div>
-    
-    
 
-    <script>
-       function checkUsername(element) {
-    var nameRegex = /^[A-Za-z]{6,30}$/;
-    let error = document.getElementById("error-message");
-    let error2 = document.getElementById("error-message2");
-    var NameValue = element.value;
-
-    error.innerHTML = "";
-    error2.innerHTML = "";
-
-    if(!nameRegex.test(NameValue)) {
-        switch(element.id) {
-            case "first-name": {
-                error.innerHTML = "Name should be more than 6 characters without numbers";
-                break;
-            }
-            case "last-name": {
-                error2.innerHTML = "Name should be more than 6 characters without numbers";
-                break;
-            }
-        }
-    }
-}
-        
-        function dateValidation() {
-            let date = document.getElementById('birth-date').value;
-            let dateMessage = document.getElementById('date-message');
-            const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/(19|20)\d{2}$/;
-            dateMessage.innerHTML = "";
-            if (!dateRegex.test(date)) {
-                dateMessage.innerHTML = "Date isn't valid";
-            }
-        }
-        
-        function emailValidation() {
-            let email = document.getElementById('email').value;
-            let emailMessage = document.getElementById('email-message');
-            const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
-            emailMessage.innerHTML = "";
-            if (!emailRegex.test(email)) {
-                emailMessage.innerHTML = "Email isn't valid";
-            }
-        }
-        
-        function checkEmail() {
-            let email = document.getElementById('email').value;
-            let confMessage = document.getElementById('conf-message');
-            let confEmail = document.getElementById('confirm-email').value;
-            confMessage.innerHTML = "";
-            if (email !== confEmail) {
-                confMessage.innerHTML = "Email isn't matching";
-            }
-        }
-
-        function passvalidation() {
-            let pass = document.getElementById('password').value;
-            let passMessage = document.getElementById('pass-message');
-            const passwordRegex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/;
-            passMessage.innerHTML = "";
-            if (!passwordRegex.test(pass)) {
-                passMessage.innerHTML = "Email isn't valid";
-            }
-        }
-
-        function checkPass() {
-            let pass = document.getElementById('password').value;
-            let confPassMessage = document.getElementById('conf-pass-message');
-            let confPass = document.getElementById('confirm-password').value;
-            confPassMessage.innerHTML = "";
-            if (pass !== confPass) {
-                confPassMessage.innerHTML = "Password isn't matching";
-            }
-        }
-
-        function phoneValidation() {
-            let phone = document.getElementById('phone').value;
-            let phoneMessage = document.getElementById('phone-message');
-            const phoneRegex = /^\d{10}$/;
-            phoneMessage.innerHTML = "";
-            if (!phoneRegex.test(phone)) {
-                phoneMessage.innerHTML = "Email isn't valid";
-            }
-        }
-        </script>
+    <script src="main.js"></script>
 </body>
 </html>
